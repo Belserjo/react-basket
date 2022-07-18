@@ -11,18 +11,19 @@ const CountersList = () => {
     ];
 
     const [counters, setCounters] = useState(initialState);
-    console.log(initialState)
+
     const handleDelete = (id) => {
         const newCounters = counters.filter((c) => c.id !== id);
         setCounters(newCounters);
     };
+    
     const handleIncrement = (id) => {
         setCounters(prevState => prevState.map(e => {
             if (e.id === id) e.value += 1
-                return e;
+            return e;
         }))
-
     }
+    
     const handleDecrement = (id) => {
         setCounters(prevState => prevState.map(e => {
             if (e.id === id && e.value) e.value -= 1
